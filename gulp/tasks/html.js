@@ -36,7 +36,7 @@ const html = (isBuild) => src(filePaths.src.html)
   .pipe(plugins.if(isBuild, htmlValidator.analyzer()))
   .pipe(plugins.if(isBuild, htmlValidator.reporter()))
   .pipe(dest(filePaths.buildFolder))
-  .pipe(plugins.if(!isBuild, debug()))
+  .pipe(plugins.if(!isBuild, debug({ title: 'HTML files' })))
   .pipe(plugins.browserSync.stream());
 
 export default html;

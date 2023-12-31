@@ -4,12 +4,16 @@ const buildFolder = './dist';
 const srcFolder = './src';
 
 const filePaths = {
-  build: {},
+  build: {
+    css: `${buildFolder}/css/`,
+  },
   src: {
     html: `${srcFolder}/html/*.html`,
+    scss: `${srcFolder}/scss/*.scss`,
   },
   watch: {
     html: `${srcFolder}/html/**/*.html`,
+    scss: `${srcFolder}/scss/**/*.scss`,
   },
   buildFolder,
   srcFolder,
