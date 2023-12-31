@@ -18,6 +18,7 @@ const filePaths = {
     svg: `${srcFolder}/images/**/*.svg`,
     fontFacesFile: `${srcFolder}/scss/config/_fonts.scss`,
     fonts: `${srcFolder}/fonts/`,
+    svgIcons: `${srcFolder}/icons/*.svg`,
   },
   watch: {
     html: `${srcFolder}/html/**/*.html`,

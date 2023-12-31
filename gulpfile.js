@@ -6,6 +6,7 @@ import scss from './gulp/tasks/scss.js';
 import js from './gulp/tasks/js.js';
 import images from './gulp/tasks/images.js';
 import { ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
+import svgSprites from './gulp/tasks/sprite.js';
 import filePaths from './gulp/config/paths.js';
 
 const { parallel, series, watch } = pkg;
@@ -32,4 +33,4 @@ const dev = series(clean, mainTasks, parallel(watcher, server));
 const build = series(clean, mainTasks);
 
 export default dev;
-export { build };
+export { dev, build, svgSprites };
