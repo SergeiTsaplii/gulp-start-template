@@ -19,6 +19,7 @@ const filePaths = {
     fontFacesFile: `${srcFolder}/scss/config/_fonts.scss`,
     fonts: `${srcFolder}/fonts/`,
     svgIcons: `${srcFolder}/icons/*.svg`,
+    favicon: `${srcFolder}/favicon/favicon.svg`,
   },
   watch: {
     html: `${srcFolder}/html/**/*.html`,

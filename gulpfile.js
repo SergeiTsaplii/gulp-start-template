@@ -8,6 +8,7 @@ import images from './gulp/tasks/images.js';
 import { ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
 import svgSprites from './gulp/tasks/sprite.js';
 import filePaths from './gulp/config/paths.js';
+import favicon from './gulp/tasks/favicon.js';
 
 const { parallel, series, watch } = pkg;
 
@@ -33,4 +34,6 @@ const dev = series(clean, mainTasks, parallel(watcher, server));
 const build = series(clean, mainTasks);
 
 export default dev;
-export { dev, build, svgSprites };
+export {
+  dev, build, svgSprites, favicon,
+};
