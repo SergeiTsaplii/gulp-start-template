@@ -31,6 +31,7 @@ const scss = (isBuild) => src(filePaths.src.scss, { sourcemaps: !isBuild })
 
 export default scss;
 
+// import { stream as critical } from 'critical';
 // export const critCSS = () =>
 //   gulp
 //     .src(path.src.html)

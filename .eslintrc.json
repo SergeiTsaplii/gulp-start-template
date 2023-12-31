@@ -19,7 +19,7 @@
       ],
       "import/no-extraneous-dependencies": [
         "error",
-        {"devDependencies": ["gulpfile.js", "gulp/**/*"]}
+        {"devDependencies": ["gulpfile.js", "gulp/**/*", "webpack.config.js"]}
       ]
     }
 }
