@@ -8,6 +8,7 @@ const filePaths = {
     css: `${buildFolder}/css/`,
     js: `${buildFolder}/js/`,
     images: `${buildFolder}/images/`,
+    fonts: `${buildFolder}/fonts/`,
   },
   src: {
     html: `${srcFolder}/html/*.html`,
@@ -15,6 +16,8 @@ const filePaths = {
     js: `${srcFolder}/js/*.js`,
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,tiff}`,
     svg: `${srcFolder}/images/**/*.svg`,
+    fontFacesFile: `${srcFolder}/scss/config/_fonts.scss`,
+    fonts: `${srcFolder}/fonts/`,
   },
   watch: {
     html: `${srcFolder}/html/**/*.html`,

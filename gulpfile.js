@@ -5,6 +5,7 @@ import html from './gulp/tasks/html.js';
 import scss from './gulp/tasks/scss.js';
 import js from './gulp/tasks/js.js';
 import images from './gulp/tasks/images.js';
+import { ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
 import filePaths from './gulp/config/paths.js';
 
 const { parallel, series, watch } = pkg;
@@ -22,7 +23,10 @@ const watcher = () => {
   watch(filePaths.watch.images, handleImages);
 };
 
-const mainTasks = parallel(handleHTML, handleSCSS, handleJS, handleImages);
+const fonts = series(ttfToWoff, fontStyle);
+const devTasks = parallel(handleHTML, handleSCSS, handleJS, handleImages);
+
+const mainTasks = series(fonts, devTasks);
 
 const dev = series(clean, mainTasks, parallel(watcher, server));
 const build = series(clean, mainTasks);
