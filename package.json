@@ -8,7 +8,8 @@
     "dev": "gulp",
     "build": "gulp build --build",
     "svgSprites": "gulp svgSprites",
-    "favicon": "node gulp/tasks/favicon.js && gulp copyFavicon",
+    "favicons": "gulp copyFavicon && gulp deletedFile",
+    "favicon": "node gulp/tasks/favicon.js && npm run favicons",
     "prepare": "husky install"
   },
   "keywords": [],

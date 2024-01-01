@@ -7,7 +7,7 @@ import js from './gulp/tasks/js.js';
 import images from './gulp/tasks/images.js';
 import { ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
 import svgSprites from './gulp/tasks/sprite.js';
-import copyFavicon from './gulp/tasks/copyFavicon.js';
+import { copyFavicon, deletedFile } from './gulp/tasks/copyFavicon.js';
 import filePaths from './gulp/config/paths.js';
 
 const { parallel, series, watch } = pkg;
@@ -35,5 +35,5 @@ const build = series(clean, mainTasks);
 
 export default dev;
 export {
-  dev, build, svgSprites, copyFavicon,
+  dev, build, svgSprites, copyFavicon, deletedFile,
 };
