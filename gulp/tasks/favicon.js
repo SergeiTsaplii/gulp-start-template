@@ -9,7 +9,7 @@ const htmlBasename = 'index.html'; // HTML file basename.
 
 // Configuration (see above in the README file).
 const configuration = {
-  path: '/images/favicons',
+  path: 'images/favicons',
   icons: {
     favicons: true,
     appleIcon: true,
