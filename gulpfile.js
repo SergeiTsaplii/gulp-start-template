@@ -9,6 +9,7 @@ import { ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
 import svgSprites from './gulp/tasks/sprite.js';
 import { copyFavicon, deletedFile } from './gulp/tasks/copyFavicon.js';
 import zip from './gulp/tasks/zip.js';
+import ftpDeploy from './gulp/tasks/ftpDeploy.js';
 import filePaths from './gulp/config/paths.js';
 
 const { parallel, series, watch } = pkg;
@@ -34,8 +35,9 @@ const mainTasks = series(fonts, devTasks);
 const dev = series(clean, mainTasks, parallel(watcher, server));
 const build = series(clean, mainTasks);
 const deployZIP = series(clean, mainTasks, zip);
+const deployFTP = series(clean, mainTasks, ftpDeploy);
 
 export default dev;
 export {
-  dev, build, svgSprites, copyFavicon, deletedFile, deployZIP,
+  dev, build, svgSprites, copyFavicon, deletedFile, deployZIP, deployFTP,
 };
