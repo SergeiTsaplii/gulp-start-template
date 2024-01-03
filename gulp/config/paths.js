@@ -9,6 +9,7 @@ const filePaths = {
     js: `${buildFolder}/js/`,
     images: `${buildFolder}/images/`,
     fonts: `${buildFolder}/fonts/`,
+    static: `${buildFolder}/static/`,
   },
   src: {
     html: `${srcFolder}/html/*.html`,
@@ -20,12 +21,14 @@ const filePaths = {
     fonts: `${srcFolder}/fonts/`,
     svgIcons: `${srcFolder}/icons/*.svg`,
     favicon: `${srcFolder}/favicon/favicon.svg`,
+    static: `${srcFolder}/static/**/*.*`,
   },
   watch: {
     html: `${srcFolder}/html/**/*.html`,
     scss: `${srcFolder}/scss/**/*.scss`,
     js: `${srcFolder}/js/**/*.js`,
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,svg,tiff}`,
+    static: `${srcFolder}/static/**/*.*`,
   },
   buildFolder,
   srcFolder,

@@ -11,6 +11,7 @@ import { copyFavicon, deletedFile } from './gulp/tasks/copyFavicon.js';
 import zip from './gulp/tasks/zip.js';
 import ftpDeploy from './gulp/tasks/ftpDeploy.js';
 import { cache, rewrite } from './gulp/tasks/cache.js';
+import copy from './gulp/tasks/copy.js';
 import filePaths from './gulp/config/paths.js';
 
 const { parallel, series, watch } = pkg;
@@ -26,10 +27,11 @@ const watcher = () => {
   watch(filePaths.watch.scss, handleSCSS);
   watch(filePaths.watch.js, handleJS);
   watch(filePaths.watch.images, handleImages);
+  watch(filePaths.watch.static, copy);
 };
 
 const fonts = series(ttfToWoff, fontStyle);
-const devTasks = parallel(handleHTML, handleSCSS, handleJS, handleImages);
+const devTasks = parallel(copy, handleHTML, handleSCSS, handleJS, handleImages);
 
 const mainTasks = series(fonts, devTasks);
 
