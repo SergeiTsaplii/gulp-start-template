@@ -12,7 +12,9 @@ import zip from './gulp/tasks/zip.js';
 import ftpDeploy from './gulp/tasks/ftpDeploy.js';
 import { cache, rewrite } from './gulp/tasks/cache.js';
 import copy from './gulp/tasks/copy.js';
+
 import filePaths from './gulp/config/paths.js';
+import copyRootFiles from './gulp/tasks/copyRoot.js';
 
 const { parallel, series, watch } = pkg;
 
@@ -31,7 +33,7 @@ const watcher = () => {
 };
 
 const fonts = series(ttfToWoff, fontStyle);
-const devTasks = parallel(copy, handleHTML, handleSCSS, handleJS, handleImages);
+const devTasks = parallel(copy, copyRootFiles, handleHTML, handleSCSS, handleJS, handleImages);
 
 const mainTasks = series(fonts, devTasks);
 
