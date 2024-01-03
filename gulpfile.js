@@ -10,6 +10,7 @@ import svgSprites from './gulp/tasks/sprite.js';
 import { copyFavicon, deletedFile } from './gulp/tasks/copyFavicon.js';
 import zip from './gulp/tasks/zip.js';
 import ftpDeploy from './gulp/tasks/ftpDeploy.js';
+import { cache, rewrite } from './gulp/tasks/cache.js';
 import filePaths from './gulp/config/paths.js';
 
 const { parallel, series, watch } = pkg;
@@ -36,8 +37,9 @@ const dev = series(clean, mainTasks, parallel(watcher, server));
 const build = series(clean, mainTasks);
 const deployZIP = series(clean, mainTasks, zip);
 const deployFTP = series(clean, mainTasks, ftpDeploy);
+const cached = series(cache, rewrite);
 
 export default dev;
 export {
-  dev, build, svgSprites, copyFavicon, deletedFile, deployZIP, deployFTP,
+  dev, build, svgSprites, copyFavicon, deletedFile, deployZIP, deployFTP, cached,
 };
