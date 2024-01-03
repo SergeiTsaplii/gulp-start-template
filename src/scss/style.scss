@@ -1,4 +1,10 @@
-body {
-  font-size: 15px;
-  background-color: #fff;
-}
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+// CSS-файлы библиотек
+@import "vendor/libs";
+
+// Основное
+@import "base/fonts";
+@import "base/general";
